@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<rts:RtsProfile rts:abstract="" rts:creationDate="2015-12-07T11:01:42" rts:id="RTSystem:SSR:kinect_test:1.0.0" rts:updateDate="2015-12-07T11:01:42" rts:version="0.2" xmlns:rts="http://www.openrtp.org/namespaces/rts" xmlns:rtsExt="http://www.openrtp.org/namespaces/rts_ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <rts:Components rts:activeConfigurationSet="default" rts:compositeType="None" rts:id="RTC:ysuga.net:Experimental:RTCKinect:1.0.0" rts:instanceName="RTCKinect0" rts:isRequired="true" rts:pathUri="localhost:2809/RTCKinect0.rtc" rtsExt:visible="true">
+        <rts:DataPorts rts:name="targetElevation" rtsExt:visible="true"/>
+        <rts:DataPorts rts:name="image" rtsExt:visible="true"/>
+        <rts:DataPorts rts:name="depth" rtsExt:visible="true"/>
+        <rts:DataPorts rts:name="currentElevation" rtsExt:visible="true"/>
+        <rts:DataPorts rts:name="skeleton" rtsExt:visible="true"/>
+        <rts:ConfigurationSets rts:id="default">
+            <rts:ConfigurationData rts:data="480" rts:name="camera_height"/>
+            <rts:ConfigurationData rts:data="1" rts:name="enable_camera"/>
+            <rts:ConfigurationData rts:data="1" rts:name="enable_depth"/>
+            <rts:ConfigurationData rts:data="640" rts:name="camera_width"/>
+            <rts:ConfigurationData rts:data="0" rts:name="kinect_index"/>
+            <rts:ConfigurationData rts:data="320" rts:name="depth_width"/>
+            <rts:ConfigurationData rts:data="0" rts:name="debug"/>
+            <rts:ConfigurationData rts:data="0" rts:name="player_index"/>
+            <rts:ConfigurationData rts:data="240" rts:name="depth_height"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__widget__">
+            <rts:ConfigurationData rts:data="text" rts:name="camera_height"/>
+            <rts:ConfigurationData rts:data="text" rts:name="enable_camera"/>
+            <rts:ConfigurationData rts:data="text" rts:name="enable_depth"/>
+            <rts:ConfigurationData rts:data="text" rts:name="camera_width"/>
+            <rts:ConfigurationData rts:data="text" rts:name="kinect_index"/>
+            <rts:ConfigurationData rts:data="text" rts:name="depth_width"/>
+            <rts:ConfigurationData rts:data="text" rts:name="debug"/>
+            <rts:ConfigurationData rts:data="text" rts:name="player_index"/>
+            <rts:ConfigurationData rts:data="text" rts:name="depth_height"/>
+        </rts:ConfigurationSets>
+        <rts:ExecutionContexts rts:id="0" rts:kind="PERIODIC" rts:rate="10.0"/>
+        <rtsExt:Location rtsExt:direction="DOWN" rtsExt:height="0" rtsExt:width="0" rtsExt:x="0" rtsExt:y="0"/>
+        <rtsExt:Properties rtsExt:name="IOR" rtsExt:value="IOR:010000003500000049444c3a6f70656e72746d2e616973742e676f2e6a702f4f70656e52544d2f44617461466c6f77436f6d706f6e656e743a312e3000000000010000000000000064000000010102000e0000003139322e3136382e3132302e3800fa0a0e000000fe63e864560000160c000000000000000200000000000000080000000100000000545441010000001c00000001000000010001000100000001000105090101000100000009010100"/>
+    </rts:Components>
+    <rts:Components rts:compositeType="None" rts:id="RTC:SUGAR SWEET ROBOTICS:Test:KinectTest:1.0.0" rts:instanceName="KinectTest0" rts:isRequired="true" rts:pathUri="localhost:2809/KinectTest0.rtc" rtsExt:visible="true">
+        <rts:DataPorts rts:name="in" rtsExt:visible="true"/>
+        <rts:ConfigurationSets rts:id="default"/>
+        <rts:ExecutionContexts rts:id="0" rts:kind="PERIODIC" rts:rate="1000.0"/>
+        <rtsExt:Location rtsExt:direction="DOWN" rtsExt:height="0" rtsExt:width="0" rtsExt:x="0" rtsExt:y="0"/>
+        <rtsExt:Properties rtsExt:name="IOR" rtsExt:value="IOR:010000003500000049444c3a6f70656e72746d2e616973742e676f2e6a702f4f70656e52544d2f44617461466c6f77436f6d706f6e656e743a312e3000000000010000000000000064000000010102000e0000003139322e3136382e3132302e3800fa0a0e000000fe63e864560000160c000000000800000200000000000000080000000100000000545441010000001c00000001000000010001000100000001000105090101000100000009010100"/>
+    </rts:Components>
+    <rts:DataPortConnectors rts:connectorId="8cd5d83a-15a7-4800-a999-92bcc48efb2c" rts:dataType="IDL:KINECT/NuiSkeletonFrame:1.0" rts:dataflowType="push" rts:interfaceType="corba_cdr" rts:name="skeletonin" rts:pushInterval="0.0" rts:subscriptionType="new" rtsExt:visible="true">
+        <rts:sourceDataPort rts:componentId="RTC:ysuga.net:Experimental:RTCKinect:1.0.0" rts:instanceName="RTCKinect0" rts:portName="RTCKinect0.skeleton">
+            <rtsExt:Properties rtsExt:name="COMPONENT_PATH_ID" rtsExt:value="localhost:2809/RTCKinect0.rtc"/>
+        </rts:sourceDataPort>
+        <rts:targetDataPort rts:componentId="RTC:SUGAR SWEET ROBOTICS:Test:KinectTest:1.0.0" rts:instanceName="KinectTest0" rts:portName="KinectTest0.in">
+            <rtsExt:Properties rtsExt:name="COMPONENT_PATH_ID" rtsExt:value="localhost:2809/manager_cpp.mgr/KinectTest0.rtc"/>
+        </rts:targetDataPort>
+        <rtsExt:Properties rtsExt:name="dataport.dataflow_type" rtsExt:value="push"/>
+        <rtsExt:Properties rtsExt:name="dataport.serializer.cdr.endian" rtsExt:value="little,big"/>
+        <rtsExt:Properties rtsExt:name="dataport.data_type" rtsExt:value="IDL:KINECT/NuiSkeletonFrame:1.0"/>
+        <rtsExt:Properties rtsExt:name="dataport.interface_type" rtsExt:value="corba_cdr"/>
+        <rtsExt:Properties rtsExt:name="dataport.subscription_type" rtsExt:value="new"/>
+    </rts:DataPortConnectors>
+</rts:RtsProfile>

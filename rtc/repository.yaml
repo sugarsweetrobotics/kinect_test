@@ -1,0 +1,15 @@
+ImageViewer:
+  description: Image Viewer Component with common camera interface 2.0
+  git: https://github.com/sugarsweetrobotics/ImageViewer.git
+  hash: 51454b02579051f552cda70b932bf30e7fc1135a
+  repo_name: ImageViewer
+Kinect:
+  description: RT Component for Kinect for Windows v1
+  git: https://github.com/sugarsweetrobotics/Kinect.git
+  hash: 1abef4eb695b18bc1f3fa6c9575b71b8cd39c0a5
+  repo_name: Kinect
+KinectTest:
+  description: KinectTest RTC
+  git: https://github.com/sugarsweetrobotics/KinectTest.git
+  hash: 0ae0d98b4debbef78fe81675af2a8213faa1f6a8
+  repo_name: KinectTest
